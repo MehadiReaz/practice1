@@ -1,5 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:practice1/transaction.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
           title: const Text('Practice'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
@@ -23,6 +26,19 @@ class MyApp extends StatelessWidget {
               return Card(
                   child: Column(
                 children: [
+                  Card(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        TextField(
+                            decoration: InputDecoration(label: Text('Title'))),
+                        TextField(
+                            decoration: InputDecoration(label: Text('Amount'))),
+                        FlatButton(
+                            onPressed: () {}, child: Text('Add Transaction'))
+                      ],
+                    ),
+                  ),
                   Row(children: [
                     Container(
                       margin:
@@ -54,7 +70,7 @@ class MyApp extends StatelessWidget {
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            tx.date.toString(),
+                            DateFormat('dd MMM yy').format(tx.date),
                             style: TextStyle(
                               color: Color.fromARGB(255, 104, 102, 102),
                             ),
