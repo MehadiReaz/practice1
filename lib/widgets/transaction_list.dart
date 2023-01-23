@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:practice1/widgets/user_tranaction.dart';
 import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
@@ -9,7 +8,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200,
+        height: 300,
         child: ListView.builder(
           itemBuilder: (ctx, index) {
             return Card(
